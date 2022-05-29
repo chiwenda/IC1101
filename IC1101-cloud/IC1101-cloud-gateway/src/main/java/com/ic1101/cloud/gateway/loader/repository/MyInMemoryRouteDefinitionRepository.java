@@ -1,0 +1,58 @@
+package com.ic1101.cloud.gateway.loader.repository;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.gateway.route.RouteDefinition;
+import org.springframework.cloud.gateway.route.RouteDefinitionRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.util.ObjectUtils;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/**
+ * 内存中读取路由
+ *
+ * @author cwd
+ * @date 5/18/22 4:04 PM
+ */
+@Slf4j
+@Component
+public class MyInMemoryRouteDefinitionRepository implements RouteDefinitionRepository {
+
+    private final Map<String, RouteDefinition> routes = Collections.synchronizedMap(new LinkedHashMap<>());
+
+
+    @Override
+    public Flux<RouteDefinition> getRouteDefinitions() {
+        LinkedHashMap<String, RouteDefinition> routesSafeCopy = new LinkedHashMap<>(this.routes);
+        return Flux.fromIterable(routesSafeCopy.values());
+    }
+
+    @Override
+    public Mono<Void> save(Mono<RouteDefinition> route) {
+        return route.flatMap(r -> {
+            if (ObjectUtils.isEmpty(r.getId())) {
+                return Mono.error(new IllegalArgumentException("gateway route id may not be empty!"));
+            } else {
+                this.routes.put(r.getId(), r);
+                return Mono.empty();
+            }
+        });
+    }
+
+    @Override
+    public Mono<Void> delete(Mono<String> routeId) {
+        return routeId.flatMap(id -> {
+            if (this.routes.containsKey(id)) {
+                this.routes.remove(id);
+                return Mono.empty();
+            } else {
+                log.warn("RouteDefine not found:{}", routeId);
+                return Mono.empty();
+            }
+        });
+    }
+}

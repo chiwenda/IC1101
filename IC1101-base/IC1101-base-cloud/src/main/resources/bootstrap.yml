@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: '@nacos.discovery.server-addr@'
+      config:
+        username: '@nacos.username@'
+        password: '@nacos.password@'
+        server-addr: '@nacos.config.server.addr@'
+        prefix: '@prefix.name@'
+        file-extension: yml
+  config:
+    activate:
+      on-profile: '@profile.name@'

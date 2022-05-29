@@ -1,0 +1,27 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: ic1001-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowCredentials: true
+            #springboot2.4后需用allowedOriginPatterns
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+    nacos:
+      discovery:
+        server-addr: '@nacos.discovery.server-addr@'
+      config:
+        username: '@nacos.username@'
+        password: '@nacos.password@'
+        server-addr: '@nacos.config.server.addr@'
+        prefix: '@prefix.name@'
+        file-extension: yml
