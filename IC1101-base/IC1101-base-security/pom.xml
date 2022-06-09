@@ -19,6 +19,11 @@
             <groupId>com.cwd</groupId>
             <artifactId>IC1101-common</artifactId>
         </dependency>
+        <!-- Spring 核心 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
