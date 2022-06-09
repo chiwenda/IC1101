@@ -10,11 +10,15 @@
     <version>${ic1101.version}</version>
 
     <properties>
+        <ic1101.version>0.0.1</ic1101.version>
         <java.version>1.8</java.version>
         <!-- 统一依赖管理 -->
         <spring.boot.version>2.6.8</spring.boot.version>
+        <lombok.version>1.18.20</lombok.version>
+        <!-- 工具类相关 -->
+        <mapstruct.version>1.4.1.Final</mapstruct.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <ic1101.version>0.0.1</ic1101.version>
+
 
         <!-- 微服务属性 -->
         <spring-cloud.version>2021.0.2</spring-cloud.version>
@@ -62,10 +66,17 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- ic1101-common-core -->
+            <!-- Web 相关 -->
             <dependency>
                 <groupId>com.cwd</groupId>
-                <artifactId>IC1101-common-core</artifactId>
+                <artifactId>IC1101-base-web</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <!-- ic1101-common -->
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-common</artifactId>
                 <version>${ic1101.version}</version>
             </dependency>
 
@@ -75,19 +86,8 @@
                 <version>${ic1101.version}</version>
             </dependency>
 
-            <!-- IC1101-biz-system -->
-            <dependency>
-                <groupId>com.cwd</groupId>
-                <artifactId>IC1101-biz-system</artifactId>
-                <version>${ic1101.version}</version>
-            </dependency>
 
-            <!-- IC1101-common-system-local-api -->
-            <dependency>
-                <groupId>com.cwd</groupId>
-                <artifactId>system-local-api</artifactId>
-                <version>${ic1101.version}</version>
-            </dependency>
+
 
             <!-- commons-beanutils -->
             <dependency>
@@ -96,11 +96,22 @@
                 <version>${commons-beanutils.version}</version>
             </dependency>
 
+            <!-- 工具类相关 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
 
             <dependency>
-                <groupId>com.cwd</groupId>
-                <artifactId>IC1101-common-tools</artifactId>
-                <version>${ic1101.version}</version>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
 
             <!-- hutool工具类-->

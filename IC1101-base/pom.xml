@@ -13,7 +13,12 @@
     <packaging>pom</packaging>
     <modules>
         <module>IC1101-base-cloud</module>
+        <module>IC1101-base-database</module>
+        <module>IC1101-base-web</module>
+        <module>IC1101-base-security</module>
     </modules>
+
+    <description>框架技术组件</description>
 
     <dependencies>
         <!--加载配置信息-->

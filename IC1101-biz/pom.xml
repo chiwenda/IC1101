@@ -12,8 +12,9 @@
     <artifactId>IC1101-biz</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>IC1101-biz-system</module>
     </modules>
+
+    <description>业务技术组件</description>
 
     <dependencies>
     </dependencies>

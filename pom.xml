@@ -4,12 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>IC1101-common</module>
         <module>IC1101-biz</module>
         <module>IC1101-cloud</module>
         <module>IC1101-base</module>
         <module>IC1101-middle</module>
         <module>IC1101-dependencies</module>
+        <module>IC1101-server</module>
+        <module>IC1101-modules</module>
+        <module>IC1101-common</module>
     </modules>
     <groupId>com.cwd</groupId>
     <artifactId>IC1101</artifactId>

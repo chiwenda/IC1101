@@ -3,20 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>IC1101</artifactId>
+        <artifactId>IC1101-base</artifactId>
         <groupId>com.cwd</groupId>
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>IC1101-cloud</artifactId>
+    <artifactId>IC1101-base-database</artifactId>
     <packaging>pom</packaging>
-
-    <description>微服务相关技术组件</description>
+    <description>数据库相关基础模块</description>
     <modules>
-        <module>IC1101-cloud-gateway</module>
-        <module>IC1101-cloud-sentinel</module>
-        <module>IC1101-cloud-nacos</module>
+        <module>IC1101-base-db-flyway</module>
     </modules>
 
 
