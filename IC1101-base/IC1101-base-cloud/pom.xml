@@ -12,10 +12,6 @@
     <artifactId>IC1101-base-cloud</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.cwd</groupId>
-            <artifactId>system-local-api</artifactId>
-        </dependency>
         <!-- Nacos注册中心 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

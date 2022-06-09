@@ -16,10 +16,6 @@
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>com.cwd</groupId>
-            <artifactId>system-local-api</artifactId>
-        </dependency>
     </dependencies>
 
 </project>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cwd</groupId>
+    <artifactId>IC1101-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <version>${ic1101.version}</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <!-- 统一依赖管理 -->
+        <spring.boot.version>2.6.8</spring.boot.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <ic1101.version>0.0.1</ic1101.version>
+
+        <!-- 微服务属性 -->
+        <spring-cloud.version>2021.0.2</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
+        <knife4j-spring-ui.version>2.0.9</knife4j-spring-ui.version>
+
+
+        <!-- 数据库驱动 -->
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <hutool.version>5.3.8</hutool.version>
+
+        <!-- 持久层 -->
+        <commons.version>2.6</commons.version>
+
+        <!-- 数据库驱动 -->
+        <guava.version>29.0-jre</guava.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 统一依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring-cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring-cloud-alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- ic1101-common-core -->
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-common-core</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-base-cloud</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <!-- IC1101-biz-system -->
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-biz-system</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <!-- IC1101-common-system-local-api -->
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>system-local-api</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <!-- commons-beanutils -->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-common-tools</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <!-- hutool工具类-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-crypto</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- guava工具类 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- commons -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

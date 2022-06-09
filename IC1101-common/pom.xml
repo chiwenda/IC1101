@@ -14,7 +14,6 @@
     <modules>
         <module>IC1101-common-core</module>
         <module>IC1101-common-tools</module>
-        <module>IC1101-common-api</module>
     </modules>
 
 </project>
