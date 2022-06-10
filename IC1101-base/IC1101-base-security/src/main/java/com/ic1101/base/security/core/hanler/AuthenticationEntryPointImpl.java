@@ -20,5 +20,6 @@ public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
             throws IOException, ServletException {
         log.debug("[访问 URL({}) 时，没有登录]",request.getRequestURI(),authException);
+
     }
 }
