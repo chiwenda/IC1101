@@ -1,13 +1,20 @@
 package com.ic1101.common.util.json;
 
+import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import lombok.extern.slf4j.Slf4j;
+
+import java.io.IOException;
 
 /**
+ * Json工具类
+ *
  * @author cwd
  * @date 6/10/22 5:44 PM
  */
+@Slf4j
 public class JsonUtils {
     private static ObjectMapper jsonMapper = new ObjectMapper();
 
@@ -25,6 +32,14 @@ public class JsonUtils {
     }
 
     public static <T> T parseObject(String text, Class<T> clazz) {
-        if(StrU)
+        if (StrUtil.isEmpty(text)) {
+            return null;
+        }
+
+        try {
+            return jsonMapper.readValue(text, clazz);
+        } catch (IOException e) {
+            log
+        }
     }
 }
