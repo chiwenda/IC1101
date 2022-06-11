@@ -3,21 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>IC1101</artifactId>
+        <artifactId>IC1101-biz</artifactId>
         <groupId>com.cwd</groupId>
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>IC1101-biz</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>IC1101-biz-system</module>
+        <module>IC1101-biz-system-api</module>
     </modules>
 
-    <description>业务技术组件</description>
+    <artifactId>IC1101-biz-system</artifactId>
+    <description>系统业务</description>
 
-    <dependencies>
-    </dependencies>
 
 </project>

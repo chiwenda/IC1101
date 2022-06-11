@@ -9,6 +9,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -93,5 +94,11 @@ public class SecurityBaseUtils {
         authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
         return authenticationToken;
+    }
+
+    public static Object getLoginUserId() {
+        LoginUser loginUser = getLoginUser();
+
+        return loginUser != null ? loginUser.getId() : null;
     }
 }
