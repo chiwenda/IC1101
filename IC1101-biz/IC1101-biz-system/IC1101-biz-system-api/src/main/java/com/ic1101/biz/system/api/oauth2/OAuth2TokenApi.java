@@ -1,5 +1,6 @@
 package com.ic1101.biz.system.api.oauth2;
 
+import com.ic1101.biz.system.api.oauth2.dto.OAuth2AccessTokenCheckRespDTO;
 import com.ic1101.biz.system.api.oauth2.dto.OAuth2AccessTokenCreateReqDTO;
 import com.ic1101.biz.system.api.oauth2.dto.OAuth2AccessTokenRespDTO;
 
@@ -27,6 +28,14 @@ public interface OAuth2TokenApi {
      * @return 访问令牌信息
      */
     OAuth2AccessTokenRespDTO refreshAccessToken(String refreshToken, String clientId);
+
+
+    /**
+     * 校验访问令牌
+     * @param accessToken 令牌
+     * @return 访问令牌信息
+     */
+    OAuth2AccessTokenCheckRespDTO checkAccessToken(String accessToken);
 
 
 }

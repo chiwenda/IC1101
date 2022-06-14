@@ -14,6 +14,7 @@
     <description>数据库相关基础模块</description>
     <modules>
         <module>IC1101-base-db-flyway</module>
+        <module>IC1101-base-db-mybatis</module>
     </modules>
 
 

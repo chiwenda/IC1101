@@ -14,28 +14,24 @@
         <java.version>1.8</java.version>
         <!-- 统一依赖管理 -->
         <spring.boot.version>2.6.8</spring.boot.version>
-        <lombok.version>1.18.20</lombok.version>
         <!-- 工具类相关 -->
+        <lombok.version>1.18.20</lombok.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-
+        <commons.version>2.6</commons.version>
+        <hutool.version>5.8.2</hutool.version>
+        <guava.version>29.0-jre</guava.version>
+        <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
+        <knife4j-spring-ui.version>2.0.9</knife4j-spring-ui.version>
         <!-- 微服务属性 -->
         <spring-cloud.version>2021.0.2</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
-        <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
-        <knife4j-spring-ui.version>2.0.9</knife4j-spring-ui.version>
-
-
         <!-- 数据库驱动 -->
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
-        <hutool.version>5.8.2</hutool.version>
+        <druid.version>1.2.8</druid.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
 
-        <!-- 持久层 -->
-        <commons.version>2.6</commons.version>
 
-        <!-- 数据库驱动 -->
-        <guava.version>29.0-jre</guava.version>
     </properties>
 
 
@@ -73,7 +69,7 @@
                 <version>${ic1101.version}</version>
             </dependency>
 
-            <!-- ic1101-common -->
+            <!-- 业务 -->
             <dependency>
                 <groupId>com.cwd</groupId>
                 <artifactId>IC1101-common</artifactId>
@@ -86,8 +82,29 @@
                 <version>${ic1101.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-biz-system-api</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-base-mybatis</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
 
+            <!-- 数据库相关 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
 
             <!-- commons-beanutils -->
             <dependency>
