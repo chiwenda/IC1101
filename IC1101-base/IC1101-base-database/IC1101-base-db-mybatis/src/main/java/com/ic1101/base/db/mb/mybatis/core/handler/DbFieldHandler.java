@@ -31,13 +31,31 @@ public class DbFieldHandler implements MetaObjectHandler {
                 baseDO.setUpdateTime(current);
             }
 
-            //
-            WebBaseUtils
+            Long userId = WebBaseUtils.getLoginUserId();
+            //当前登录用户为创建人和更新人
+            if (Objects.nonNull(userId)) {
+                if (Objects.isNull(baseDO.getCreator())) {
+                    baseDO.setCreator(String.valueOf(userId));
+                }
+                if (Objects.isNull(baseDO.getUpdater())) {
+                    baseDO.setUpdater(String.valueOf(userId));
+                }
+            }
         }
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
 
+        Object updateTime = getFieldValByName("updateTime", metaObject);
+        if (Objects.isNull(updateTime)) {
+            setFieldValByName("updateTime", new Date(), metaObject);
+        }
+
+        Object updater = getFieldValByName("updater", metaObject);
+        Long userId = WebBaseUtils.getLoginUserId();
+        if (Objects.nonNull(userId) && Objects.isNull(updater)) {
+            setFieldValByName("updater", String.valueOf(userId), metaObject);
+        }
     }
 }
