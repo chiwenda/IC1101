@@ -5,7 +5,7 @@
     <parent>
         <artifactId>IC1101-base</artifactId>
         <groupId>com.cwd</groupId>
-        <version>${ic1101.version}</version>
+        <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
