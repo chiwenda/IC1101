@@ -4,7 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import com.ic1101.base.security.config.SecurityProperties;
 import com.ic1101.base.security.core.pojo.LoginUser;
 import com.ic1101.base.security.util.SecurityBaseUtils;
-import com.ic1101.base.web.core.util.WebBaseUtils;
+import com.ic1101.base.web.web.core.util.WebBaseUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.annotation.Resource;

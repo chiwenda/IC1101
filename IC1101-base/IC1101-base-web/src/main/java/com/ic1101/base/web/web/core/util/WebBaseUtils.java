@@ -1,6 +1,6 @@
-package com.ic1101.base.web.core.util;
+package com.ic1101.base.web.web.core.util;
 
-import com.ic1101.base.web.config.WebProperties;
+import com.ic1101.base.web.web.config.WebPropertiesX;
 import com.ic1101.common.enums.UserTypeEnum;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -17,10 +17,10 @@ import java.util.Objects;
  */
 public class WebBaseUtils {
 
-    private static WebProperties webProperties;
+    private static WebPropertiesX webPropertiesX;
 
-    public WebBaseUtils(WebProperties webProperties) {
-        WebBaseUtils.webProperties = webProperties;
+    public WebBaseUtils(WebPropertiesX webPropertiesX) {
+        WebBaseUtils.webPropertiesX = webPropertiesX;
     }
 
     private static final String REQUEST_ATTRIBUTE_LOGIN_USER_ID = "login_user_id";
@@ -38,10 +38,10 @@ public class WebBaseUtils {
         }
 
         //从uri判断
-        if (request.getRequestURI().startsWith(webProperties.getAdminApi().getPrefix())) {
+        if (request.getRequestURI().startsWith(webPropertiesX.getAdminApi().getPrefix())) {
             return UserTypeEnum.ADMIN.getValue();
         }
-        if (request.getRequestURI().startsWith(webProperties.getAppApi().getPrefix())) {
+        if (request.getRequestURI().startsWith(webPropertiesX.getAppApi().getPrefix())) {
             return UserTypeEnum.MEMBER.getValue();
         }
         return null;

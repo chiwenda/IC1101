@@ -2,7 +2,7 @@ package com.ic1101.base.db.mb.mybatis.core.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.ic1101.base.db.mb.mybatis.core.entity.BaseDO;
-import com.ic1101.base.web.core.util.WebBaseUtils;
+import com.ic1101.base.web.web.core.util.WebBaseUtils;
 import org.apache.ibatis.reflection.MetaObject;
 
 import java.util.Date;

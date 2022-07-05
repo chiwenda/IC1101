@@ -1,8 +1,9 @@
-package com.ic1101.base.web.config;
+package com.ic1101.base.web.web.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -12,17 +13,19 @@ import javax.validation.constraints.NotNull;
  */
 @ConfigurationProperties("ic1101.web")
 @Data
-public class WebProperties {
+public class WebPropertiesX {
 
-    @NotNull(message = "APP API 不能为空")
+    @NotNull(message = "APP API not be null")
     private Api appApi;
-    @NotNull(message = "Admin API 不能为空")
+
+    @NotNull(message = "Admin API not be null")
     private Api adminApi;
 
-    @NotNull(message = "Admin UI 不能为空")
+    @NotNull(message = "Admin UI not be null")
     private Ui adminUi;
 
 
+    @Valid
     @Data
     public static class Api {
 
@@ -34,7 +37,7 @@ public class WebProperties {
     }
 
     @Data
-    public static class Ui{
+    public static class Ui {
 
         /**
          * 访问地址

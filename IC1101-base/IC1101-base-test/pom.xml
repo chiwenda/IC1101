@@ -5,14 +5,13 @@
     <parent>
         <artifactId>IC1101-base</artifactId>
         <groupId>com.cwd</groupId>
-        <version>0.0.1</version>
+        <version>${ic1101.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
 
-    <artifactId>IC1101-base-web</artifactId>
-    <description>web框架相关</description>
+    <artifactId>IC1101-base-test</artifactId>
 
+    <description>单元测试，集成测试</description>
 
     <dependencies>
         <dependency>
@@ -20,26 +19,23 @@
             <artifactId>IC1101-common</artifactId>
         </dependency>
 
-
-
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-        </dependency>
-
-        <!-- Web 相关 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId> <!-- 单元测试，我们采用 H2 作为数据库 -->
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>uk.co.jemos.podam</groupId> <!-- 单元测试，随机生成 POJO 类 -->
+            <artifactId>podam</artifactId>
+        </dependency>
+
     </dependencies>
 
 
