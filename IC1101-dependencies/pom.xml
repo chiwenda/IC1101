@@ -72,9 +72,39 @@
             </dependency>
 
             <!-- Web 相关 -->
+
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-base</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-base-database</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.cwd</groupId>
                 <artifactId>IC1101-base-web</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-base-security</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-base-db-mybatis</artifactId>
+                <version>${ic1101.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cwd</groupId>
+                <artifactId>IC1101-base-redis</artifactId>
                 <version>${ic1101.version}</version>
             </dependency>
 

@@ -5,7 +5,7 @@
     <parent>
         <artifactId>IC1101</artifactId>
         <groupId>com.cwd</groupId>
-        <version>0.0.1</version>
+        <version>${ic1101.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,6 +18,7 @@
         <module>IC1101-base-security</module>
         <module>IC1101-base-test</module>
         <module>IC1101-base-redis</module>
+        <module>IC1101-base-tenant</module>
     </modules>
 
     <description>框架技术组件</description>

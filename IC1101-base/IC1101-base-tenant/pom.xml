@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>IC1101-base</artifactId>
+        <groupId>com.cwd</groupId>
+        <version>${ic1101.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>IC1101-base-tenant</artifactId>
+    <description>多租户</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cwd</groupId>
+            <artifactId>IC1101-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cwd</groupId>
+            <artifactId>IC1101-base-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cwd</groupId>
+            <artifactId>IC1101-base-db-mybatis</artifactId>
+        </dependency>
+    </dependencies>
+</project>
