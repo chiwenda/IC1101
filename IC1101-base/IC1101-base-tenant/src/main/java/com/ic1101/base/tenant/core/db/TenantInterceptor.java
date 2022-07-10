@@ -1,7 +1,9 @@
 package com.ic1101.base.tenant.core.db;
 
+import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.extension.plugins.handler.TenantLineHandler;
 import com.ic1101.base.tenant.config.TenantProperties;
+import com.ic1101.base.tenant.core.context.TenantContextHolder;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
 import net.sf.jsqlparser.schema.Column;
@@ -31,10 +33,12 @@ public class TenantInterceptor implements TenantLineHandler {
 
     @Override
     public Expression getTenantId() {
-        return new LongValue()
+        return new LongValue(TenantContextHolder.getRequiredTenantId());
     }
+
     @Override
     public boolean ignoreTable(String tableName) {
-        return TenantLineHandler.super.ignoreTable(tableName);
+        return TenantContextHolder.isIgnore()
+                || CollUtil.contains(ignoreTables, tableName);
     }
 }

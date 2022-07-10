@@ -77,4 +77,30 @@ public class WebBaseUtils {
         return servletRequestAttributes.getRequest();
 
     }
+
+    public static Integer getLoginUserType() {
+        HttpServletRequest request = getRequest();
+        return getUserType(request);
+    }
+
+    public static Integer getLoginUserType(HttpServletRequest request) {
+        if (Objects.isNull(request)) {
+            return null;
+        }
+
+        //从请求头中获取
+        Integer userType = (Integer) request.getAttribute(REQUEST_ATTRIBUTE_LOGIN_USER_TYPE);
+        if (Objects.nonNull(userType)) {
+            return userType;
+        }
+
+        //url约定
+        if (request.getRequestURI().startsWith(webPropertiesX.getAdminApi().getPrefix())) {
+            return UserTypeEnum.ADMIN.getValue();
+        }
+        if (request.getRequestURI().startsWith(webPropertiesX.getAppApi().getPrefix())) {
+            return UserTypeEnum.MEMBER.getValue();
+        }
+        return null;
+    }
 }

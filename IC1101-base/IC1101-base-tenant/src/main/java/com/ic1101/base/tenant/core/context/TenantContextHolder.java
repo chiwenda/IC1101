@@ -2,6 +2,8 @@ package com.ic1101.base.tenant.core.context;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
 
+import java.util.Objects;
+
 /**
  * @author ：chiwd
  * @description：多租户上下文
@@ -31,6 +33,14 @@ public class TenantContextHolder {
 
     public static boolean isIgnore() {
         return Boolean.TRUE.equals(IGNORE.get());
+    }
+
+    public static Long getRequiredTenantId() {
+        Long tenantId = getTenantId();
+        if (Objects.isNull(tenantId)) {
+            throw new NullPointerException("TenantContextHolder 不存在租户编号");
+        }
+        return tenantId;
     }
 
     public static void clear() {

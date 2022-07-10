@@ -19,6 +19,7 @@
         <module>IC1101-base-test</module>
         <module>IC1101-base-redis</module>
         <module>IC1101-base-tenant</module>
+        <module>IC1101-base-log</module>
     </modules>
 
     <description>框架技术组件</description>
