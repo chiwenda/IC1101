@@ -16,6 +16,7 @@
         <module>IC1101-middle-aop</module>
         <module>IC1001-middle-async</module>
         <module>IC1101-websocket</module>
+        <module>IC1101-middle-kafka</module>
     </modules>
 
     <properties>

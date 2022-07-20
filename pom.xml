@@ -11,8 +11,6 @@
         <module>IC1101-dependencies</module>
         <module>IC1101-server</module>
         <module>IC1101-modules</module>
-        <module>IC1101-common</module>
-        <module>IC1101-base-tenant</module>
     </modules>
     <groupId>com.cwd</groupId>
     <artifactId>IC1101</artifactId>
